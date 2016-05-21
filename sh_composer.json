@@ -1,0 +1,67 @@
+{
+  "name": "laravel/laravel",
+  "description": "The Laravel Framework.",
+  "keywords": ["framework", "laravel"],
+  "license": "MIT",
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "git@gitlab:colin1124x/auth-basic.git"
+    },
+    {
+      "type": "vcs",
+      "url": "git@gitlab:colin1124x/provider.git"
+    },
+    {
+      "type": "vcs",
+      "url": "git@rde-gitlab.vir888.com:huang/adapter.git"
+    },
+    {
+      "type": "vcs",
+      "url": "git@rde-gitlab.vir888.com:huang/log-subscriber.git"
+    },
+    {
+      "type": "vcs",
+      "url": "http://rde-tech.vir888.com/gogs/tpa/php-telegram-connection.git"
+    }
+  ],
+  "require": {
+    "laravel/framework": "4.1.*",
+    "nategood/httpful": "*",
+    "rde/auth-basic": "dev-master",
+    "rde/adapter": "dev-master",
+    "rde/log-subscriber": "dev-master",
+    "rde/php-telegram-connection": "dev-master"
+  },
+  "autoload": {
+    "classmap": [
+      "app/commands",
+      "app/controllers",
+      "app/models",
+      "app/database/migrations",
+      "app/database/seeds",
+      "app/tests/TestCase.php",
+      "app/library",
+      "app/facades"
+    ]
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "php artisan clear-compiled",
+      "php artisan optimize"
+    ],
+    "post-update-cmd": [
+      "php artisan clear-compiled",
+      "php artisan optimize"
+    ],
+    "post-create-project-cmd": [
+      "php artisan key:generate"
+    ]
+  },
+  "config": {
+    "preferred-install": "dist",
+    "secure-http": false
+
+  },
+  "minimum-stability": "dev"
+}
